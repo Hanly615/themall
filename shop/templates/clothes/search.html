@@ -1,0 +1,76 @@
+<html>
+{% load static%}
+<head>
+	<meta charset="UTF-8">
+	<title>搜索框页面</title>
+	<link href="{% static "css_clothes/search.css" %}" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+	<script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+	<script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+</head>
+
+<body>
+
+<div style="padding: 100px 100px 10px;">
+	<form class="bs-example bs-example-form" role="form">
+		<div class="row">
+            <div class="col-lg-3"></div>
+			<div class="col-lg-6">
+				<div class="input-group">
+					<div class="input-group-btn">
+						<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+							下拉菜单
+							<span class="caret"></span>
+						</button>
+						<ul class="dropdown-menu">
+							<li><a href="#">根据衣服名字</a></li>
+							<li><a href="#">根据衣服的ID</a></li>
+							<li><a href="#">根据种类</a></li>
+							<li class="divider"></li>
+							<li><a href="#"></a></li>
+						</ul>
+					</div><!-- /btn-group -->
+					<input type="text" class="form-control">
+				</div><!-- /input-group -->
+			</div><!-- /.col-lg-6 --><br>
+
+		</div><!-- /.row -->
+	</form>
+</div>
+
+<div>
+
+<div style="float:left">
+	<a href="https://www.zara.cn/cn/zh/%E4%BA%AE%E7%89%87%E9%92%88%E7%BB%87%E8%A1%AB-p09598141.html?v1=7409613&v2=1074618"><img src="https://static.zara-static.cn/photos///2018/I/0/1/p/9598/141/715/2/w/400/9598141715_2_5_1.jpg?ts=1540399679856"
+	style="width: 200px" title="go to zara">
+	<br>ZARA女装提花针织衫</br>
+	</a>
+</div>
+
+<div style="float:left">
+	<a href="https://www.zara.cn/cn/zh/%E9%92%A9%E9%92%88%E6%B0%B4%E6%9E%9C%E5%9B%BE%E6%A1%88%E9%92%88%E7%BB%87%E8%A1%AB-p00021105.html?v1=7094520&v2=1074618"><img src="https://static.zara-static.cn/photos///2018/I/0/1/p/0021/105/712/2/w/400/0021105712_2_3_1.jpg?ts=1539679922007"
+	style="width: 200px" title="go to zara">
+	<br>ZARA女装提花针织衫</br>
+</div>
+
+<!-- 你需要为你的图片加上一个父元素<DIV></DIV>，在DIV标签里面你可以加上CSS样式，style="float：left（向左浮动）；margin：(XX)px (XX)px (XX)px (XX)px(这4个XX分别控制上、右、下、左的边距)； -->
+<div style="float:right">
+	<a href="https://static.zara-static.cn/photos///2018/I/0/1/p/4644/454/250/2/w/560/4644454250_1_1_1.jpg?ts=1534414500149"><img src="https://static.zara-static.cn/photos///2018/I/0/1/p/4644/454/250/2/w/560/4644454250_1_1_1.jpg?ts=1534414500149"
+	style="width: 200px" title="go to zara">
+	<br>ZARA提花针织连身裙</br>
+	</a>
+</div>
+
+<div style="float:right">
+	<a href="https://www.zara.cn/cn/zh/%E6%8F%90%E8%8A%B1%E9%92%88%E7%BB%87%E8%BF%9E%E8%BA%AB%E8%A3%99-p01822112.html?v1=7439512&v2=1074618"><img src="https://static.zara-static.cn/photos///2018/I/0/1/p/1822/112/080/2/w/560/1822112080_1_1_1.jpg?ts=1539703094115"
+	style="width: 200px" title="go to zara">
+	<br>ZARA提花针织连身裙</br>
+	</a>
+</div>
+
+</div>
+
+
+</body>
+</html>

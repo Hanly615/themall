@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+{% load static%}
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title></title>
+
+</head>
+<link rel="stylesheet" type="text/css" href="{%static 'css_clothes/littleMan.css'%}">
+<link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+<script type="text/javascript" src="../../static/js/jquery-1.12.4.js"></script>
+<script src="http://libs.baidu.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+<body>
+
+<div class="bg" id="bg">
+
+
+<!-- 模态框（Modal） -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"
+                        aria-hidden="true">×
+                </button>
+                <h4 class="modal-title" id="myModalLabel">
+                    抓住小人的说明
+                </h4>
+            </div>
+            <div class="modal-body">
+                按每个小人在click之后会跳转随机次数，（三次以内），
+                被抓住后即可跳转到你所感兴趣的服装购物页面，
+                与小人衣服一致哦~
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default"
+                        data-dismiss="modal">关闭
+                </button>
+                <button type="button" class="btn btn-primary">
+                    提交更改
+                </button>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+    <div class="man1" id="man1" name="卫衣"><img src="{% static 'img/1.png'%}" onclick=""/></div>
+    <div class="man2" id="man2" name="背心"><img src="{% static 'img/2.png'%}" onclick=""/></div>
+    <div class="man3" id="man3" name="校服"><img src="{% static 'img/3.png'%}" onclick=""/></div>
+    <div class="man5" id="man4" name="女仆装"><img src="{% static 'img/5.png'%}" onclick=""/></div>
+    <div class="man6" id="man5" name="动物衣服"><img src="{% static 'img/6.png'%}" onclick=""/></div>
+    <div class="man7" id="man6" name="短袖"><img src="{% static 'img/7.png'%}"/></div>
+    <div class="man8" id="man7" name="衬衫"><img src="{% static 'img/8.png'%}"/></div>
+    <!-- <div class="man9"><img搜索框 src="img搜索框/9.png"/></div> -->
+    <div class="man10" id="man8" name="露肩服"><img src="{% static 'img/10.png'%}"/></div>
+    <div class="man11" id="man9" name="无袖裙"><img src="{% static 'img/11.png'%}"/></div>
+    <div class="man12" id="man10" name="和服"><img src="{% static 'img/12.png'%}"/></div>
+    <div class="man13" id="man11" name="chibidot_sample"><img src="{% static 'img/13.png'%}"/></div>
+    <div class="man14" id="man12" name="春秋衣服"><img src="{% static 'img/14.png'%}"/></div>
+    <div class="man15" id="man13" name="泳衣"><img src="{% static 'img/15.png'%}"/></div>
+
+    <!--<button id="change" name="随机" onclick="skip()">随机</button>-->
+    <a href="../"><img src="{% static 'img/GoHome.png'%}"></a>
+    <!-- 按钮触发模态框 -->
+<button class="btn btn-warning btn-lg" data-toggle="modal" data-target="#myModal">
+    抓住他们的方法
+</button>
+</div>
+</body>
+<!--<script type="text/javascript" src="js/picTurn.js">-->
+
+<script type="text/javascript">
+    //用于记录不同小人的点击次数
+    var checktimes = [0,0,0,0,0,0,0,0,0,0,0,0,0]
+    var flag = 0;
+//小人所对应的衣服
+    var clothesUrl = [  ["http://www.tonlion.com/goods.php?id=623310025426"],
+                        ["https://detail.tmall.com/item.htm?spm=a1z10.3-b-s.w4011-19077620180.31.3f953731WyLv4a&id=565111697703&rn=879c53be82a96d291ef7835ff1f8a456&abbucket=8"],
+                        ["https://item.taobao.com/item.htm?spm=a230r.7195193.1997079397.22.6b544c78j3vq4h&id=534325482386&abbucket=17"],
+                        ["https://item.taobao.com/item.htm?spm=a1z10.1-c.w4004-17909449760.4.2e2a26e38MPeQA&id=548030126252"],
+                        ["https://item.taobao.com/item.htm?spm=a230r.7195193.1997079397.9.4852351cot0H4Z&id=536187181857&abbucket=17"],
+                        ["https://item.jd.com/28023529349.html"],
+                        ["http://www.yishion.net/nz/info_3.aspx?itemid=13227&parent&lcid=79"],
+                        ["https://detail.tmall.com/item.htm?id=575567063626&spm=a230r.7195193.1997079397.10.66a7760epxv8tU&abbucket=17"],
+                        ["https://www.zara.cn/cn/zh/%E6%97%A0%E8%A2%96%E7%89%9B%E4%BB%94%E8%BF%9E%E8%A1%A3%E8%A3%99-p00327203.html?v1=6797557&v2=1074757"],
+                        ["https://item.taobao.com/item.htm?spm=a230r.7195193.1997079397.9.29234d8bZNcXyL&id=571558483035&abbucket=17"],
+                        ["http://gouwu.360.cn/detail?id=75785613&qd=102"]
+                        ["http://www.tonlion.com/goods.php?id=622321023413"],
+                        ["http://www.banggo.com/goods/205858.shtml"],
+                        ["http://item.moonbasa.com/p-013115216.html"],
+                        ]
+$(function () {
+
+    var i = 1;
+    var index = 13;
+//    开头给所有图片设置监听
+    for (i;i<=index;i++)
+    {
+        click(i)
+    }
+
+});
+// 初始化函数
+function init()
+{
+    var i=0;
+    index = 13;
+    index=checktimes.length;
+    for(i;i<index;i++)
+    {
+        checktimes[i]=0;
+    }
+
+}
+
+//点击函数用作点击时使用
+function click(i) {
+    $("#man"+i).click(function () {
+        checktimes[i-1]++;
+        console.log(i)
+        k = i
+        flag = 0;
+        if(checktimes[i-1]==3)
+        {
+            console.log(checktimes[i])
+            alert("you catch it !!少年好臂力！！！")
+            flag = 1;
+            location.href=clothesUrl[k-1][0]
+            init();
+// checktimes[i-1]==Math.floor(Math.random()*4)||
+        }
+        skip();
+        if(flag == 0 )
+        alert("嘿嘿嘿，逮不到我！菜鸡")
+    })
+}
+//进行随机跳转
+function skip()
+{
+            /**
+			 * 一下的代码用来测试，图片位置是否可以更换
+			 * 测试成功，需要解决的问题是如何进行随机，且如何存放那么多的位置变量。
+             */
+			// $("#change").click(function () {
+			// var x = $("#man1").position();
+			// var y = $("#man4").position();
+		 //
+			// $("#man1").css搜索框1({'left':y.left,'top':y.top})
+			// $("#man4").css搜索框1({'left':x.left,'top':x.top})
+         //    })
+		//
+
+            // var a = $("#bg > *")
+            // console.log(a) 有问题
+
+             var index = 13
+             var arr = [];
+             var tarr = [];
+             var position = [];
+
+            /**
+             * 此循环用来存储原来图片的位置
+             */
+            for(i=0;i<index;i++)
+            {
+
+                var str = "#man"+(i+1);
+                position.push($(str).position())
+                //这里你不得不注意，你加进去后，position[0]里也是一个数组，
+                // 只不过只有一个，这个可能跟jQuery有关，认为加入东西都是加入伪数组的
+            }
+            // console.log(position)检测数组情况
+
+
+            /**
+             * 随机函数，进行数组的随机排列
+             */
+            function rond(index)
+            {
+                 // for(var i=0; i < index; i++)
+                 // {<!--生成数组，保存序号 -->
+                 //  arr[i] = i;
+                 // //    生成了 0,1,2,3,4,5...
+                 // }
+
+
+
+                 var j = index;
+
+                 for(var i=0; i<index; i++)
+                 {<!--随机数组，图片随机 -->
+                  var t = Math.floor(Math.random()*j);//生成随机位置t
+                  j--;
+                  tarr[i] = position.splice(t,1);
+                 // 把arr中，位置t的数拿出来，给tarr[i]这样就完成了随机排布，这样
+                 }
+            }
+
+            rond(13);
+            // var c = tarr[0][0].left
+            //有趣的地方，不是tarr[0]因为里面还是数组形式
+            // console.log(tarr);
+
+            /**
+             * 激动人心，更改小人位置
+             */
+            for(i=0;i<index;i++)
+            {
+                var str = "#man"+(i+1);
+                $(str).css({'left':tarr[i][0].left,'top':tarr[i][0].top})
+            }
+
+
+}
+
+
+</script>
+</html>

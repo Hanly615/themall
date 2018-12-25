@@ -1,0 +1,143 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>test</title>
+<script type="text/javascript" src="../js/jquery-1.12.4.js"></script>
+<script type="text/javascript">
+jQuery(document).ready(function($){
+ var arr = [];
+ var tarr = [];
+ var pic = [];
+ <!--保存图片地址，因为本地图片原因，所以上传到了百度空间 -->
+ pic[0] = "../img/1.png";
+ pic[1] = "../img/2.png";
+ pic[2] = "../img/4.png";
+ // pic[3] = "images/index/t4.gif";
+ // pic[4] = "images/index/t5.gif";
+ // pic[5] = "images/index/t6.gif";
+ // pic[6] = "images/index/t7.gif";
+ // pic[7] = "images/index/t8.gif";
+ // pic[8] = "images/index/t9.gif";
+ // pic[9] = "images/index/t10.gif";
+ // pic[10] = "images/index/t11.gif";
+ // pic[11] = "images/index/t12.gif";
+ // pic[12] = "images/index/t13.gif";
+ // pic[13] = "images/index/t14.gif";
+ // pic[14] = "images/index/t15.gif";
+ // pic[15] = "images/index/t1.gif";
+ // pic[16] = "images/index/t2.gif";
+ // pic[17] = "images/index/t3.gif";
+ // pic[18] = "images/index/t4.gif";
+ // pic[19] = "images/index/t5.gif";
+ // pic[20] = "images/index/t6.gif";
+ // pic[21] = "images/index/t7.gif";
+ // pic[22] = "images/index/t8.gif";
+ // pic[23] = "images/index/t8.gif";
+ var index = 3;
+ <!--图片个数，可自定义，但是同时li的个数也要与图片个数一样 -->
+     function rond(){
+         for(var i=0; i < index; i++){<!--生成数组，保存序号 -->
+          arr[i] = i;
+         //    生成了 0,1,2,3,4,5
+         }
+         var j = index;
+         //j=3
+
+         for(var i=0; i<index; i++){<!--随机数组，图片随机 -->
+          var t = Math.floor(Math.random()*j);//生成随机位置t
+          j--;
+          tarr[i] = arr.splice(t,1);
+         // 把arr中，位置t的数拿出来，给tarr[i]这样就完成了随机排布
+         }
+     }
+
+     function resetPic(){
+     rond();
+     for(var i=0; i<index; i++){<!--生成图片，位置随机 --><!--016/images/"+i+".jpg -->
+      $("#c_u").append("<li class=\"li_"+tarr[i]+"\" style=\"background:url("+pic[i]+")\"> </li>")
+     }
+     }
+
+     $("#reset span").click(function(){
+     rond();
+     for(var i=0; i<index; i++){
+      $("#c_u li").eq(i).attr("class","").addClass("li_"+tarr[i]);
+     }
+     });
+     resetPic();
+     <!--拖动，移位……没完成，边界条件没处理好，删掉了 -->
+    });
+
+    </script>
+
+    <style type="text/css">
+
+    body{
+    background: url(../img/littleManBackground.png);
+		position:relative;
+		width: 1440px; height: 1024px;
+    }
+
+    #reset{
+    width:898px; height:36px; margin:0 auto;
+    position:relative; color:#FFFFFF;
+    font-size:28px; line-height:36px;
+    font-weight:bold;
+    }
+
+    #reset span{
+    cursor:pointer; text-decoration:underline;
+    }
+
+    #c_u{
+    width:898px; height:596px;
+    margin:0 auto; position:relative;
+    list-style:none; padding:8px;
+    border:4px solid #FFFFFF;
+    }
+    #c_u li{
+    margin:8px; border:4.5px solid #FFFFFF;
+    width: 83px;height: 89px;
+    position:absolute; padding:0;
+    transition:all .5s ease-out 0s;
+    -webkit-transition:all .5s ease-out 0s;
+    -o-transition:all .5s ease-out 0s;
+    }
+#c_u li{cursor:move;}
+#c_u li.red{border-color:#FF99CC;}
+#c_u li.move{position:fixed;}
+#c_u li.abs{position:absolute;}
+#c_u li img{vertical-align:top;}
+#c_u .li_0{top:8px; left:8px;}
+#c_u .li_1{top:8px; left:158px;}
+#c_u .li_2{top:8px; left:308px;}
+#c_u .li_3{top:8px; left:458px;}
+/*#c_u .li_4{top:8px; left:608px;}*/
+/*#c_u .li_5{top:8px; left:758px;}*/
+/*#c_u .li_6{top:158px; left:8px;}*/
+/*#c_u .li_7{top:158px; left:158px;}*/
+/*#c_u .li_8{top:158px; left:308px;}*/
+/*#c_u .li_9{top:158px; left:458px;}*/
+/*#c_u .li_10{top:158px; left:608px;}*/
+/*#c_u .li_11{top:158px; left:758px;}*/
+/*#c_u .li_12{top:308px; left:8px;}*/
+/*#c_u .li_13{top:308px; left:158px;}*/
+/*#c_u .li_14{top:308px; left:308px;}*/
+/*#c_u .li_15{top:308px; left:458px;}*/
+/*#c_u .li_16{top:308px; left:608px;}*/
+/*#c_u .li_17{top:308px; left:758px;}*/
+/*#c_u .li_18{top:458px; left:8px;}*/
+/*#c_u .li_19{top:458px; left:158px;}*/
+/*#c_u .li_20{top:458px; left:308px;}*/
+/*#c_u .li_21{top:458px; left:458px;}*/
+/*#c_u .li_22{top:458px; left:608px;}*/
+/*#c_u .li_23{top:458px; left:758px;}*/
+</style>
+</head>
+<body>
+<div id="reset"><span>Reset</span>:</div>
+<ul id="c_u"></ul>
+</body>
+</html>

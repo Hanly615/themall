@@ -1,0 +1,13 @@
+
+/*.Productionabsbox {margin-top: 2%}*/
+/*.Productionabsbox div a .selected {color: #00ccff}*/
+/*.Productionabsbox div a {color: black; font-size: 18px}*/
+/*.tabscont {margin-top: 2%}*/
+/*.tabscont div {background-color: #f5f5f5; padding: 1.5%}*/
+
+#productionTabs div a {font-size: 18px; color: black}
+#productionTabs div .selected {color: #00ccff}
+
+
+/*#productionTabs #3DPrint .selected {color: #00ccff}*/
+/*#productionTabs #scrtchProgramming .selected {color: #00ccff}*/

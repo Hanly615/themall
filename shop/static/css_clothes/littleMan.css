@@ -1,0 +1,50 @@
+.bg{
+		background: url(../img/littleManBackground.png);
+		position:relative;
+		width: 1440px; height: 1024px;
+	/* width: 1440px; height: 1024px; background: url(../img搜索框/littleManBg.png); */
+	/* 这里如果不加宽度和长度,背景会消失，因为开始没有设置，其物理空间由内部的内容撑开
+	 当进行绝对定位全部移开后，其大小就会越来越小，直至消失。（个人理解）*/
+}
+
+
+.man1{
+	position:absolute;top:629px;z-index:15;left:291px;width: 83px;height: 89px;
+}
+.man2{
+	position:absolute;top:384px;z-index:7;left:888px;width: 103px;height: 101px;
+}
+
+.man3{
+	position:absolute;top:698px;z-index:17;left:49px;width: 95px;height: 103px;
+}
+.man5{
+	position:absolute;top:494px;z-index:14;left:1121px;width: 86px;height: 96px;
+}
+.man6{
+	position:absolute;top:139px;z-index:10;left:1207px;width: 65px;height: 78px;
+}
+.man7{
+	position:absolute;top:267px;z-index:11;left:744px;width: 72px;height: 94px;
+}
+.man8{
+	position:absolute;top:783px;z-index:8;left:631px;width: 78px;height: 116px;
+}
+.man10{
+	position:absolute;top:63px;z-index:13;left:652px;width: 92px;height: 100px;
+}
+.man11{
+	position:absolute;top:478px;z-index:16;left:1312px;width: 88px;height: 96px;
+}
+.man12{
+	position:absolute;top:113px;z-index:12;left:96px;width: 78px;height: 96px;
+}
+.man13{
+	position:absolute;top:783px;z-index:20;left:1198px;width: 74px;height: 91px;
+}
+.man14{
+	position:absolute;top:73px;z-index:9;left:443px;width: 92px;height: 105px;
+}
+.man15{
+	position:absolute;top:113px;z-index:18;left:7px;width: 89px;height: 99px;
+}
